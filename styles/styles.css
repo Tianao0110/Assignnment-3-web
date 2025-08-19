@@ -288,3 +288,10 @@ main.contact {
 
 }
 
+#submit-message {
+    font-size: 24px;
+}
+
+main.contact.message-sent {
+    justify-content: flex-start;
+}
