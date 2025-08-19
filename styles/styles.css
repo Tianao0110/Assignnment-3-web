@@ -237,26 +237,26 @@ p#clear-button {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
-.contact-page {
+main.contact {
     height: 420px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.contact-page > .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 474px; /* 150px + 24px + 300px */
-  }
+.contact form .flex {
+    gap: 24px;
+    align-items: center;
+}
 
-.labels-column {
+.contact form label {
     width: 150px;
     text-align: right;
 }
 
-.inputs-column {
+.contact form input,
+.contact form textarea {
     width: 300px;
 }
 
@@ -264,16 +264,27 @@ p#clear-button {
     height: 150px;
 }
 
-.input-column input, 
-.input-column textarea, 
-.input-column button {
+.contact input,
+.contact textarea,
+.contact button {
+    font-family: inherit;
     font-size: 16px;
+    border: 1px solid black;
+}
+
+.contact input,
+.contact textarea {
     line-height: 24px;
-    border: 1px solid black; 
+}
+
+.contact form .flex,
+.contact form button {
     margin-bottom: 24px;
 }
 
-.input-column button {
-    width: 300px;
+.contact button {
+	width: 300px;
+	margin-left: 174px;
+
 }
 

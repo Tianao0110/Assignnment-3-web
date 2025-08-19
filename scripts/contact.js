@@ -9,8 +9,7 @@ document
 
 // hint: you can change the style of an element by modifying the value of that element's .style.fontSize, or by updating its .classList.
 
-// when an element with the class "blue-hover" is hovered over, it will change the text colour to white, add an underline, and change the background colour to cornflower blue.
-document.querySelectorAll(".blue-hover").forEach(function (el) {
+
   el.addEventListener("mouseover", function (event) {
     event.target.style.color = "white";
     event.target.style.textDecoration = "underline";
