@@ -2,7 +2,9 @@
 // useful variables might be: the cost per day, the number of days selected, and elements on the screen that will be clicked or will need to be modified. 
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
-const costPerDay = 30;
+const costPerFullDay = 35;
+const costPerHalfDay = 20;
+let dailyRate = costPerFullDay;
 let dayCounter = 0;
 let totalCost = 0;
 
@@ -50,7 +52,7 @@ document.querySelector("#clear-button").addEventListener("click", function() {
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 document.querySelector("#half").addEventListener("click", function() {
-    dailyRate = 20;
+    dailyRate = costPerHalfDay;
     document.querySelector("#half").classList.add("clicked");
     document.querySelector("#full").classList.remove("clicked");
     recalculateTotalCost();
@@ -61,7 +63,7 @@ document.querySelector("#half").addEventListener("click", function() {
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 document.querySelector("#full").addEventListener("click", function() {
-    dailyRate = 35;
+    dailyRate = costPerFullDay;
     document.querySelector("#half").classList.remove("clicked");
     document.querySelector("#full").classList.add("clicked");
     recalculateTotalCost();
@@ -77,5 +79,4 @@ function recalculateTotalCost() {
     totalCost = dailyRate * dayCounter;
     calculatedCostElement.textContent = totalCost;
 }
-
 
