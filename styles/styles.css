@@ -44,27 +44,33 @@ body {
         - change the text colour to white, and 
         - change the cursor to pointer.
 */
-h1{
+h1 {
     font-size: 48px;
+    line-height: 48px;
     text-align: center;
 }
+
 h2 {
     font-size: 36px;
     margin-bottom: 12px;
 }
-.large-text{
+
+.large-text {
     font-size: 24px;
 }
-.fake-button{
+
+.fake-button {
     background-color: #E5AF42;
     text-align: center;
     line-height: 3;
     border:1px solid black;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
+
 main a:hover, 
 footer a:hover {
     text-decoration: underline;
@@ -100,8 +106,6 @@ footer {
 
 header {
     height: 150px;
-    display: flex;
-    align-items: center;
 }
 
 header img {
@@ -110,22 +114,23 @@ header img {
     margin: 25px 0 25px 25px;
 }
 
-header h1 {
-    flex-grow: 1;
+header a.flex {
+    align-items: center;
 }
 
-header {
-    margin-bottom: 25px;
+header h1 {
+    flex: 1;
 }
 
 main {
-    margin-bottom: 50px;
+    margin: 25px 0 50px 0;
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     height: 60px;
     font-weight: 200;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -140,39 +145,32 @@ footer {
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
-.index-page main {
-    display: flex;
-    gap: 25px;
+.index > .flex:first-of-type {
+	gap: 25px;
 }
 
-.index-page .text-column {
-    flex-grow: 1;
+.index > .flex:last-of-type {
+	gap: 150px;
+	justify-content: center;
 }
 
-.index-page img {
+.index img {
     width: 300px;
     margin-bottom: 50px;
 }
 
-.index-page h2 {
+.index h2 {
     line-height: 1;
 }
 
-.index-page p {
+.index .about-us p {
     margin-bottom: 12px;
 }
 
-.index-page .fake-button {
+.index .fake-button {
     width: 250px;
 }
 
-.index-page .fake-button + .fake-button {
-    margin-left: 150px;
-}
-
-.index-page .button-container {
-    text-align: center;
-}
 
 
 /************* bookings page *************/
@@ -191,28 +189,25 @@ footer {
 
 .booking-page {
     width: 600px;
-    margin: 0 auto;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 18px;
+    text-align: center;
 }
 
-.day-selectors {
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: center;
+.day-selector {
     gap: 20px;
+    justify-content: center;
+    margin-bottom: 12px;
 }
 
-.day-selectors li {
+.day-selector li {
     width: 60px;
-}
-
-.day-selectors li,
-.small-button {
     border: 1px solid black;
 }
 
 .small-button {
+    border: 1px solid black;
     padding: 5px;
 }
 
@@ -221,15 +216,15 @@ footer {
     margin-bottom: 12px;
 }
 
-.clear-button {
+p#clear-button {
     width: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .clicked {
     background-color: #E5AF42;
 }
-
-
 
 
 
@@ -242,17 +237,19 @@ footer {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
-main.contact {
+.contact-page {
     height: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contact form {
+.contact-page > .container {
     display: flex;
-    gap: 24px;
-}
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 474px; /* 150px + 24px + 300px */
+  }
 
 .labels-column {
     width: 150px;
@@ -267,29 +264,16 @@ main.contact {
     height: 150px;
 }
 
-.contact input,
-.contact textarea,
-.contact button {
-    font-family: inherit;
-    line-height: 24px;
+.input-column input, 
+.input-column textarea, 
+.input-column button {
     font-size: 16px;
-    border: 1px solid black;
+    line-height: 24px;
+    border: 1px solid black; 
     margin-bottom: 24px;
 }
 
-.contact textarea {
-    height: 150px;
-    resize: vertical; 
+.input-column button {
+    width: 300px;
 }
 
-.contact .inputs-column input,
-.contact .inputs-column textarea,
-.contact .inputs-column button {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.contact button {
-    width: 100%;
-    box-sizing: border-box;
-}
