@@ -94,21 +94,41 @@ footer a:hover {
 */
 header,
 footer {
-    color: #E5AF42;
+    background-color: #E5AF42;
 
 }
+
 header {
     height: 150px;
+    display: flex;
+    align-items: center;
 }
-img {
+
+header img {
     width: 100px;
-    height: 25px
-    ;
+    height: 100px;
+    margin: 25px 0 25px 25px;
 }
 
+header h1 {
+    flex-grow: 1;
+}
 
+header {
+    margin-bottom: 25px;
+}
 
+main {
+    margin-bottom: 50px;
+}
 
+footer {
+    height: 60px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /************* index page *************/
 
@@ -120,9 +140,39 @@ img {
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
+.index-page main {
+    display: flex;
+    gap: 25px;
+}
 
+.index-page .text-column {
+    flex-grow: 1;
+}
 
+.index-page img {
+    width: 300px;
+    margin-bottom: 50px;
+}
 
+.index-page h2 {
+    line-height: 1;
+}
+
+.index-page p {
+    margin-bottom: 12px;
+}
+
+.index-page .fake-button {
+    width: 250px;
+}
+
+.index-page .fake-button + .fake-button {
+    margin-left: 150px;
+}
+
+.index-page .button-container {
+    text-align: center;
+}
 
 
 /************* bookings page *************/
@@ -139,13 +189,45 @@ img {
 
 */
 
+.booking-page {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
 
+.day-selectors {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.day-selectors li {
+    width: 60px;
+}
 
+.day-selectors li,
+.small-button {
+    border: 1px solid black;
+}
 
+.small-button {
+    padding: 5px;
+}
 
+.top-margin {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
 
+.clear-button {
+    width: 200px;
+}
 
+.clicked {
+    background-color: #E5AF42;
+}
 
 
 
@@ -160,6 +242,54 @@ img {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
+main.contact {
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contact form {
+    display: flex;
+    gap: 24px;
+}
 
+.labels-column {
+    width: 150px;
+    text-align: right;
+}
 
+.inputs-column {
+    width: 300px;
+}
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    font-family: inherit;
+    line-height: 24px;
+    font-size: 16px;
+    border: 1px solid black;
+    margin-bottom: 24px;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: vertical; 
+}
+
+.contact .inputs-column input,
+.contact .inputs-column textarea,
+.contact .inputs-column button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact button {
+    width: 100%;
+    box-sizing: border-box;
+}
